@@ -1,0 +1,16 @@
+body{
+    background-color: #6b0808;
+    color:aliceblue;
+}
+
+#main{
+    align-items: center;
+    justify-content: center;
+
+}
+
+.input{
+    background-color: #967f93;
+    color: black
+
+}
