@@ -1,16 +1,56 @@
 body{
-    background-color: #6b0808;
+    background-color: #81d0fd;
     color:aliceblue;
 }
 
 #main{
     align-items: center;
     justify-content: center;
+    color: black;
 
 }
 
-.input{
-    background-color: #967f93;
-    color: black
+.input-section{
+    background-color: #b92da7;
+    color: black;
+    border: 1px solid rgb(19, 13, 13);
+    padding: 20px;
 
+}
+
+#amount, #startingCurrency, #targetCurrency, button{
+    padding: 10px;
+}
+
+.from-section{
+    background-color: #b92da7;
+    color: black;
+    border: 1px solid rgb(19, 13, 13);
+    margin-top: 20px ;
+
+}
+
+#output-section{
+    background-color: #1db8ab;
+    color: black;
+    border: 1px solid rgb(19, 13, 13);
+    margin-top: 20px ;
+
+
+}
+
+#history-section{
+    background-color: #5036e4;
+    color: rgb(240, 221, 221);
+    border: 1px solid rgb(19, 13, 13);
+    margin-top: 20px ;
+
+
+}
+
+
+
+button{
+    background-color: #f8f1f1;
+    color: rgb(19, 4, 19)
 }

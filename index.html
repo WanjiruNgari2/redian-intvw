@@ -1,31 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head> 
-        <meta name="viewport" content="width=device-width initial scale = 1.0">
-        <meta charset="UTF-8" >
-        <meta name="description" content="This is a currency converter app that checks currency input and converts it to desired any currency" />
-        <meta title="Currency Converter" >
-        <link rel="stylesheet" href="/index.css" >  
 
-        
+<head>
+    <meta name="viewport" content="width=device-width ,initial-scale = 1.0">
+    <meta charset="UTF-8">
+    <meta name="description"
+        content="This is a currency converter app that checks currency input and converts it to desired any currency" />
+    <title> "Currency Converter" </title>
+        <link rel="stylesheet" href="index.css">
+</head>
 
-    </head>
-    <body>
-        <div id="#main">
-            <p>Welcome to Currency Converter App. </p>
-            <div class=".input">
-                <button class=".inputBtn" ></button>
-                whats your current currency
-            </div>
 
-              <div class=".output">
-                <input type="text" >
-                <p> </p>
-                <button class=".inputBtn"></button>
-                
-            </div>
+<body>
+    <div id="main">
+        <h1>Welcome to Currency Converter App. </h1>
+
+        <div class="input-section">
+            <label for="amount">Amount: </label>
+            <input type="number" id="amount" placeholder="Enter amonut">
+        </div> <br>
+
+        <div class="from-section">
+            <label for="startingCurrency">From: </label>
+            <input type="text" id="startingCurrency" placeholder="e.g USD">
+            <br> <br> <br> <br>
+            <label for="targetCurrency">To:</label>
+            <input type="text" id="targetCurrency" placeholder="e.g  KES">
+            <br> <br> <br> <br>
+            <button id="convertBtn">Convert</button>
 
         </div>
-        <script src="/index.js">
-    </body>
+
+    
+
+
+        <div id="output-section">
+            <h2>Result: </h2>
+            <p id="result">---</p>
+        </div>
+
+        <div id="history-section">
+            <h2>History: </h2> 
+            <ul id="historyList">---</ul>
+            <button id="historyBtn">Get History</button>
+        </div>
+
+    </div>
+    <script defer type="module" src="index.js"> </script>
+</body>
+
 </html>
