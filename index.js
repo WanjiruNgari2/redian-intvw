@@ -72,23 +72,32 @@ document.querySelector('#convertBtn').addEventListener('click', async function (
 
 
 function renderHistory() {
-    const container = document.getElementById('historyList');
-    if (!container) {
-        console.warn("Missing #historyList in HTML");
+    const tbody = document.getElementById('historyBody');
+    if (!tbody) {
+        console.warn("Missing #historyBody in HTML");
         return;
     }
 
-    container.innerHTML = "";
+    tbody.innerHTML = "";
 
     if (resultHistory.length === 0) {
-        container.textContent = "No resultHistory yet.";
+        tbody.innerHTML = '<tr><td colspan="6" style="text-align:center; padding:2rem;">No conversions yet.</td></tr>';
         return;
     }
 
-    resultHistory.forEach((conv, i) => {
-        const div = document.createElement('div');
-        div.textContent = `#${i + 1} ${conv.timeStamp} | ${conv.savedAmt} ${conv.savedStartAmt} → ${conv.savedResult} ${conv.savedTargetAmt} (rate: ${conv.savedRate})`;
-        container.appendChild(div);
+    resultHistory.forEach((conv, index) => {
+        const row = document.createElement('tr');
+
+        row.innerHTML = `
+            <td>${index + 1}</td>
+            <td>${conv.timeStamp || conv.timestamp || '—'}</td>
+            <td>${conv.savedAmt.toLocaleString()} ${conv.savedStartAmt}</td>
+            <td class="arrow">→</td>
+            <td>${Number(conv.savedResult).toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 4})} ${conv.savedTargetAmt}</td>
+            <td data-label="Rate">${conv.savedRate.toFixed(6)}</td>
+        `;
+
+        tbody.appendChild(row);
     });
 }
 
